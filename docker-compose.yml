@@ -35,7 +35,7 @@ services:
       - shared_data:/data
   spark-worker-3:
     image: bde2020/spark-worker:3.1.1-hadoop3.2
-    container_name: spark-worker-2
+    container_name: spark-worker-3
     depends_on:
       - spark-master
     ports:
