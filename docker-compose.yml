@@ -22,6 +22,7 @@ services:
       - "SPARK_MASTER=spark://spark-master:7077"
     volumes:
       - shared_data:/data
+      
   spark-worker-2:
     image: bde2020/spark-worker:3.1.1-hadoop3.2
     container_name: spark-worker-2
@@ -46,3 +47,5 @@ services:
       - shared_data:/data
 volumes:
     shared_data:
+    driver: local
+    
