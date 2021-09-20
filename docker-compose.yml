@@ -47,5 +47,5 @@ services:
       - shared_data:/data
 volumes:
     shared_data:
-    driver: local
+   
     
