@@ -9,6 +9,10 @@ services:
       - "4040:4040"      
     environment:
       - INIT_DAEMON_STEP=setup_spark
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_DRIVER_MEMORY=1G
+      - SPARK_EXECUTOR_MEMORY=1G
     volumes:
       - shared_data:/data      
   spark-worker-1:
@@ -20,6 +24,10 @@ services:
       - "8081:8081"
     environment:
       - "SPARK_MASTER=spark://spark-master:7077"
+      - "SPARK_WORKER_CORES=1"
+      - "SPARK_WORKER_MEMORY=1G"
+      - "SPARK_DRIVER_MEMORY=1G"
+      - "SPARK_EXECUTOR_MEMORY=1G"
     volumes:
       - shared_data:/data
       
@@ -32,6 +40,10 @@ services:
       - "8082:8081"
     environment:
       - "SPARK_MASTER=spark://spark-master:7077"
+      - "SPARK_WORKER_CORES=1"
+      - "SPARK_WORKER_MEMORY=1G"
+      - "SPARK_DRIVER_MEMORY=1G"
+      - "SPARK_EXECUTOR_MEMORY=1G"
     volumes:
       - shared_data:/data
   spark-worker-3:
@@ -43,6 +55,10 @@ services:
       - "8083:8081"
     environment:
       - "SPARK_MASTER=spark://spark-master:7077"
+      - "SPARK_WORKER_CORES=1"
+      - "SPARK_WORKER_MEMORY=1G"
+      - "SPARK_DRIVER_MEMORY=1G"
+      - "SPARK_EXECUTOR_MEMORY=1G"      
     volumes:
       - shared_data:/data
 volumes:
